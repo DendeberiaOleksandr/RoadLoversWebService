@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Login</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a class="active" th:href="@{/main}">Main</a></li>
+        </ul>
+    </nav>
+</header>
+<form class="box" th:action="@{/login}" method="post">
+    <h1>Login</h1>
+    <input type="text" name="username" placeholder="Username"/>
+    <input placeholder="Enter password" type="password" name="password"/>
+    <input type="submit" value="Login"/>
+    <a href="http://localhost:8080/registration">Create an account</a>
+</form>
+</body>
+</html>

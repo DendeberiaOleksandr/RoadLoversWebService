@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Edit Car</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="http://localhost:8080/main">Main</a></li>
+            <li><a href="http://localhost:8080/getCarsList">Cars</a></li>
+            <li><a href="http://localhost:8080/userEditor">User Editor</a></li>
+            <li><a href="http://localhost:8080/carsEditor">Cars Editor</a></li>
+            <li><a href="http://localhost:8080/addCar">Add Car</a></li>
+            <li><a href="http://localhost:8080/addNew">Add new</a></li>
+        </ul>
+    </nav>
+    <a class="logout" th:href="@{/logout}"><button>Log out</button></a>
+</header>
+<div>
+    <form th:object="${carEditable}" class="box" method="post" th:action="@{/addChanges}">
+        <input type="hidden" name="id" id="id" th:field="*{id}">
+        <input type="text" name="make" id="make" th:field="*{make}">
+        <input type="text" name="model" id="model" th:field="*{model}">
+        <input type="text" name="type" id="type" th:field="*{type}">
+        <label for="imagePath" class="file-choose">Choose image</label>
+        <input type="file" name="imagePath" id="imagePath">
+        <input type="submit" name="Add" value="Edit">
+    </form>
+</div>
+</body>
+</html>

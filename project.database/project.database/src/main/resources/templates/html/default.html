@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Main</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a class="active" th:href="@{/main}">Main</a></li>
+        </ul>
+    </nav>
+    <a class="logout" th:href="@{/login}"><button>Sign in</button></a>
+</header>
+<div class="default-page-content">
+    <div class="default-page-logo">
+        <img src="../../static/img/logo.jpg">
+    </div>
+    <div class="default-page-about-content">
+        <div class="text">
+            Hello everyone. Road lovers - an album site with a rich collection of cars. The site is made for the most part for beginners in the topic of cars or just people who want to look at beautiful cars.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

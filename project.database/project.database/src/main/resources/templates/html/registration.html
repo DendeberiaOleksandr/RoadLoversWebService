@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Registration</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<form class="box" th:action="@{/registration}" method="post">
+    <h1>Registration</h1>
+    <input type="text" name="username" placeholder="Username"/>
+    <input placeholder="Enter password" type="password" name="password"/>
+    <input placeholder="Confirm password"type="password" name="passwordConfirm"/>
+    <input type="submit" value="Create"/>
+</form>
+</body>
+</html>

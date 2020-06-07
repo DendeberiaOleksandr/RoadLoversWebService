@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Main</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a class="active" th:href="@{/main}">Main</a></li>
+            <li><a th:href="@{/getCarsList}">Cars</a></li>
+            <li th:if="${isAdmin}"><a th:href="@{/admin}">Admin page</a></li>
+        </ul>
+    </nav>
+    <a class="logout" th:href="@{/logout}"><button>Log out</button></a>
+</header>
+<div class="news-block">
+    <div th:each="post : ${news}" class="news-post">
+        <div class="news-header">
+            <img th:src="${post.getImgPath()}">
+            <h4 th:text="${post.getTitle()}"></h4>
+        </div>
+            <div class="news-content" th:text="${post.getContent()}">
+            </div>
+            <div class="news-time" th:text="${post.getPublishingDate()}">
+            </div>
+            <div class="news-action" th:if="${isAdmin}">
+                <a th:href="@{/newsEditor(id=${post.getId()})}">Edit</a>
+                <a th:href="@{/deleteNew(id=${post.getId()})}">Delete</a>
+            </div>
+    </div>
+</div>
+</body>
+</html>

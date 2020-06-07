@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - User Editor</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="http://localhost:8080/main">Main</a></li>
+            <li><a href="http://localhost:8080/getCarsList">Cars</a></li>
+            <li><a href="http://localhost:8080/userEditor">User Editor</a></li>
+            <li><a href="http://localhost:8080/carsEditor">Cars Editor</a></li>
+            <li><a href="http://localhost:8080/addCar">Add Car</a></li>
+            <li><a href="http://localhost:8080/addNew">Add new</a></li>
+        </ul>
+    </nav>
+    <a class="logout" th:href="@{/logout}"><button>Log out</button></a>
+</header>
+<div class="table-content">
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="user : ${usersList}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getPassword()}"></td>
+            <td><a th:href="@{/deleteUser (id=${user.getId()})}"><button>Delete</button></a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Road Lovers - Cars</title>
+    <link rel="stylesheet" href="../../static/css/css.css">
+</head>
+<body>
+<header>
+    <label class="logo">Road Lovers</label>
+    <nav>
+        <ul class="nav_links">
+            <li><a th:href="@{/main}">Main</a></li>
+        </ul>
+    </nav>
+    <a class="logout" th:href="@{/logout}"><button>Log out</button></a>
+</header>
+        <div class="container">
+            <div class="card" th:each="car : ${cars}">
+                <img th:src="${car.getImgPath()}" style="width: 100%">
+                <div class="card-content">
+                    <h4 th:text="${car.getMake()}"></h4>
+                        <p th:text="${car.getModel()}"></p>
+                        <p th:text="${car.getType()}"></p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
